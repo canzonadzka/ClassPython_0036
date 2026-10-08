@@ -30,3 +30,19 @@ class Rectangle:
             return value
         except ValueError:
             print("Please enter a valid number.")
+    
+    def main():
+    length = read_positive_number("Enter length (cm): ")
+    width = read_positive_number("Enter width (cm): ")
+
+    rect = Rectangle(length, width)
+
+    print(rect)  # calls __str__ automatically
+
+    # Way 1: object.method()
+    print(f"Circumference: {rect.circumference()} cm")
+    print(f"Area: {rect.area()} cm2")
+
+
+if __name__ == "__main__":
+    main()
