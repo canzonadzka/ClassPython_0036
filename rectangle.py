@@ -18,3 +18,15 @@ class Rectangle:
 
     def __str__(self):
         return f"Rectangle, {self.length} cm long, and {self.width} cm wide"
+    
+    def read_positive_number(prompt):
+    """Keep asking until the user enters a number that is not 0."""
+    while True:
+        try:
+            value = float(input(prompt))
+            if value <= 0:
+                print("Value cannot be 0 or negative. Try again.")
+                continue
+            return value
+        except ValueError:
+            print("Please enter a valid number.")
