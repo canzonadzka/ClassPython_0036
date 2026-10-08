@@ -18,8 +18,9 @@ class Rectangle:
 
     def __str__(self):
         return f"Rectangle, {self.length} cm long, and {self.width} cm wide"
-    
-    def read_positive_number(prompt):
+
+
+def read_positive_number(prompt):
     """Keep asking until the user enters a number that is not 0."""
     while True:
         try:
@@ -30,8 +31,9 @@ class Rectangle:
             return value
         except ValueError:
             print("Please enter a valid number.")
-    
-    def main():
+
+
+def main():
     length = read_positive_number("Enter length (cm): ")
     width = read_positive_number("Enter width (cm): ")
 
@@ -43,10 +45,10 @@ class Rectangle:
     print(f"Circumference: {rect.circumference()} cm")
     print(f"Area: {rect.area()} cm2")
 
+    # Way 2: Class.method(object)  -> same result
+    print(f"Circumference (Class.method): {Rectangle.circumference(rect)} cm")
+    print(f"Area (Class.method): {Rectangle.area(rect)} cm2")
+
 
 if __name__ == "__main__":
     main()
-
-     # Way 2: Class.method(object)  -> same result
-    print(f"Circumference (Class.method): {Rectangle.circumference(rect)} cm")
-    print(f"Area (Class.method): {Rectangle.area(rect)} cm2")
