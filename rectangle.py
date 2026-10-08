@@ -1,53 +1,53 @@
 class Rectangle:
-    """A rectangle with length and width properties."""
+    """Persegi panjang dengan properti length (panjang) dan width (lebar)."""
 
     def __init__(self, length, width):
-        # Input value cannot be 0 (or negative)
+        # Nilai input tidak boleh 0 (atau negatif)
         if length <= 0 or width <= 0:
-            raise ValueError("Length and width cannot be 0 or negative!")
+            raise ValueError("Panjang dan lebar tidak boleh 0 atau negatif!")
         self.length = length
         self.width = width
 
     def circumference(self):
-        """Circumference (perimeter) = 2 x (length + width)"""
+        """Keliling = 2 x (panjang + lebar)"""
         return 2 * (self.length + self.width)
 
     def area(self):
-        """Area = length x width"""
+        """Luas = panjang x lebar"""
         return self.length * self.width
 
     def __str__(self):
-        return f"Rectangle, {self.length} cm long, and {self.width} cm wide"
+        return f"Persegi panjang, panjang {self.length} cm dan lebar {self.width} cm"
 
 
 def read_positive_number(prompt):
-    """Keep asking until the user enters a number that is not 0."""
+    """Terus meminta input sampai pengguna memasukkan angka yang bukan 0."""
     while True:
         try:
             value = float(input(prompt))
             if value <= 0:
-                print("Value cannot be 0 or negative. Try again.")
+                print("Nilai tidak boleh 0 atau negatif. Coba lagi.")
                 continue
             return value
         except ValueError:
-            print("Please enter a valid number.")
+            print("Masukkan angka yang valid.")
 
 
 def main():
-    length = read_positive_number("Enter length (cm): ")
-    width = read_positive_number("Enter width (cm): ")
+    length = read_positive_number("Masukkan panjang (cm): ")
+    width = read_positive_number("Masukkan lebar (cm): ")
 
     rect = Rectangle(length, width)
 
-    print(rect)  # calls __str__ automatically
+    print(rect)  # memanggil __str__ secara otomatis
 
-    # Way 1: object.method()
-    print(f"Circumference: {rect.circumference()} cm")
-    print(f"Area: {rect.area()} cm2")
+    # Cara 1: objek.method()
+    print(f"Keliling: {rect.circumference()} cm")
+    print(f"Luas: {rect.area()} cm2")
 
-    # Way 2: Class.method(object)  -> same result
-    print(f"Circumference (Class.method): {Rectangle.circumference(rect)} cm")
-    print(f"Area (Class.method): {Rectangle.area(rect)} cm2")
+    # Cara 2: Class.method(objek) 
+    print(f"Keliling (Class.method): {Rectangle.circumference(rect)} cm")
+    print(f"Luas (Class.method): {Rectangle.area(rect)} cm2")
 
 
 if __name__ == "__main__":
