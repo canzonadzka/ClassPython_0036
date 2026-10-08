@@ -46,3 +46,7 @@ class Rectangle:
 
 if __name__ == "__main__":
     main()
+
+     # Way 2: Class.method(object)  -> same result
+    print(f"Circumference (Class.method): {Rectangle.circumference(rect)} cm")
+    print(f"Area (Class.method): {Rectangle.area(rect)} cm2")
